@@ -117,13 +117,13 @@ class IMU:
         self.q2 /= norm
         self.q3 /= norm
         
-        pitch = math.asin(-2*self.q1*self.q3+2*self.q0*self.q2)*57.3
-        roll = math.atan2(2*self.q2*self.q3+2*self.q0*self.q1,-2*self.q1*self.q1-2*self.q2*self.q2+1)*57.3
-        yaw = math.atan2(2*(self.q1*self.q2 + self.q0*self.q3),self.q0*self.q0+self.q1*self.q1-self.q2*self.q2-self.q3*self.q3)*57.3
-        self.pitch = pitch
-        self.roll =roll
-        self.yaw = yaw
-        return self.pitch,self.roll,self.yaw
+        # pitch = math.asin(-2*self.q1*self.q3+2*self.q0*self.q2)*57.3
+        # roll = math.atan2(2*self.q2*self.q3+2*self.q0*self.q1,-2*self.q1*self.q1-2*self.q2*self.q2+1)*57.3
+        # yaw = math.atan2(2*(self.q1*self.q2 + self.q0*self.q3),self.q0*self.q0+self.q1*self.q1-self.q2*self.q2-self.q3*self.q3)*57.3
+        # self.pitch = pitch
+        # self.roll =roll
+        # self.yaw = yaw
+        return self.q0,self.q1,self.q2,self.q3
 
 # Main program logic follows:
 if __name__ == '__main__':

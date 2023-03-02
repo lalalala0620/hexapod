@@ -29,7 +29,7 @@ class Control:
         self.height=-25
         self.body_point=[[137.1 ,189.4 , self.height], [225, 0, self.height], [137.1 ,-189.4 , self.height], 
                          [-137.1 ,-189.4 , self.height], [-225, 0, self.height], [-137.1 ,189.4 , self.height]]
-        self.calibration_leg_point=self.readFromTxt('/home/ubuntu/hexapod_ws/src/control/control/point')
+        self.calibration_leg_point=self.readFromTxt('/home/ubuntu/hexapod_ws/src/control/control/bottom_layer/point')
         self.leg_point=[[140, 0, 0], [140, 0, 0], [140, 0, 0], [140, 0, 0], [140, 0, 0], [140, 0, 0]]
         self.calibration_angle=[[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
         self.angle=[[90,0,0],[90,0,0],[90,0,0],[90,0,0],[90,0,0],[90,0,0]]

@@ -5,7 +5,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Point
 import sys
-sys.path.append('/home/ubuntu/hexapod_ws/src/control/control')
+sys.path.append('/home/ubuntu/hexapod_ws/src/control/control/bottom_layer')
 import time
 import math
 import os

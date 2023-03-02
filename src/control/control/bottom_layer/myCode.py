@@ -14,13 +14,11 @@ c=Control()
 #Action Mode : '0'   Angleless turn 
 
 #Move forward in action mode 1 and gait mode 1
-for i in range(1):
-    data=['CMD_MOVE', '1', '0', '10', '10', '0']
+for i in range(3):
+    data=['CMD_MOVE', '1', '0', '1', '1', '0']
     c.run(data)
     
-for i in range(1):
-    data=['CMD_MOVE', '1', '0', '10', '10', '0']
-    c.run(data)
+
 
 # #Move right in action mode 1 and gait mode 1
 # for i in range(3):

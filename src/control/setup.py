@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'sub_cmd_vel = control.sub_cmd_vel:main',
+            'pub_driver = control.pub_driver:main',
+            'pub_ultrasonic = control.pub_ultrasonic:main',
         ],
     },
 )

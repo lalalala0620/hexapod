@@ -32,7 +32,7 @@ class Ultrasonic:
             pingTime = self.pulseIn(self.echo_pin,GPIO.HIGH,300*60)
             distance_cm[i] = pingTime * 340.0 / 2.0 /10000.0
         distance_cm=sorted(distance_cm)
-        return int(distance_cm[1])
+        return round(distance_cm[1],3)
         
 # Main program logic follows:
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
 import sys
-sys.path.append('/home/ubuntu/hexapod_ws/src/control/control')
+sys.path.append('/home/ubuntu/hexapod_ws/src/control/control/bottom_layer')
 import smbus
 import time
 from ADCDevice import *

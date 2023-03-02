@@ -3,9 +3,9 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int64
+from sensor_msgs.msg import Range
 import sys
-sys.path.append('/home/ubuntu/hexapod_ws/src/control/control')
+sys.path.append('/home/ubuntu/hexapod_ws/src/control/control/bottom_layer')
 import time
 import RPi.GPIO as GPIO
 from Ultrasonic import *
@@ -15,15 +15,20 @@ ultrasonic = Ultrasonic()
 class pub_distance(Node):    
     def __init__(self, name):
         super().__init__(name)
-        self.publisher_ = self.create_publisher(Int64,'distance', 0)
-        self.timer = self.create_timer(0.1, self.pub_distance) 
+        self.publisher_ = self.create_publisher(Range,'distance', 0)
+        self.timer = self.create_timer(0.01, self.pub_distance) 
         
     def pub_distance(self):
-        dis = ultrasonic.getDistance()
+        dis = (ultrasonic.getDistance())
         print(dis)
-        data = Int64()
-        data.data = dis
-        self.publisher_.publish(data)
+        msg = Range()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = 'ultrasound'
+        msg.radiation_type = 0
+        msg.min_range = 0.0
+        msg.max_range = 300.0
+        msg.range = dis
+        self.publisher_.publish(msg)
     
         
 def main(args=None):

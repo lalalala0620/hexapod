@@ -6,7 +6,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 import sys
 
-sys.path.append('/home/ubuntu/hexapod_ws/src/control/control')
+sys.path.append('/home/ubuntu/hexapod_ws/src/control/control/bottom_layer')
 from Control import *
 
 #Creating object 'control' of 'Control' class.
